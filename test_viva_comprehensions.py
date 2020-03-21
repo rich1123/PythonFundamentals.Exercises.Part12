@@ -1,7 +1,8 @@
 import unittest
 import math
 import viva_comprehensions as vc
-
+import os
+import json
 
 class VivaComprehensionsTest(unittest.TestCase):
 
@@ -13,7 +14,7 @@ class VivaComprehensionsTest(unittest.TestCase):
             ([150, 152, 154, 156], (150, 157, vc.Parity.EVEN))
 
         ]
-
+#
         for expected, params in test_cases:
             with self.subTest(f"{params} -> {expected}"):
                 actual = vc.gen_list(params[0], params[1], params[2])
@@ -29,7 +30,7 @@ class VivaComprehensionsTest(unittest.TestCase):
             with self.subTest(f"{params} -> {expected}"):
                 actual = vc.gen_dict(params[0], params[1], params[2])
                 self.assertEqual(expected, actual)
-
+#
     def test_gen_set(self):
         test_cases = [
             ({'A', 'B', 'N'}, 'banana'),
@@ -42,3 +43,17 @@ class VivaComprehensionsTest(unittest.TestCase):
             with self.subTest(f"{param} -> {expected}"):
                 actual = vc.gen_set(param)
                 self.assertEqual(expected, actual)
+
+#
+# def read_all_json_files(JSON_ROOT):
+#     for root, _, files in os.walk(JSON_ROOT):
+#         results = []
+#         for f in files:
+#             if f.endswith('.json'):
+#             json_content = read.json(os.path.join(JSON_ROOT, f))
+#                 #                 result.append(all_results)
+#         for x in json_content["results"]:
+#             x['source'] = f
+#             result.append(x)
+#                 df_json = pd.dataframe(result)
+#                 return df_json

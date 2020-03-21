@@ -13,12 +13,14 @@ def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
     what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
     updating this here docstring to something useful.
 
-    :param start:
-    :param stop:
+    :param start: int at the beginning of the range (inclusive)
+    :param stop: int at the beginning of the range (exclusive)
     :param parity:
     :return:
     """
-    pass
+
+    # parity = lambda: x % 2 != 0
+    return [x for x in range(start, stop) if x % 2 != parity.value]
 
 
 def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
@@ -33,7 +35,8 @@ def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
     :param strategy:
     :return:
     """
-    pass
+
+    return {x: strategy(x) for x in range(start, stop)}
 
 
 def gen_set(val_in: str) -> Set:
@@ -45,4 +48,6 @@ def gen_set(val_in: str) -> Set:
     :param val_in:
     :return:
     """
-    pass
+
+    return {c.upper() for c in val_in if c == c.lower()}
+
