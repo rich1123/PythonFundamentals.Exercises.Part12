@@ -44,16 +44,3 @@ class VivaComprehensionsTest(unittest.TestCase):
                 actual = vc.gen_set(param)
                 self.assertEqual(expected, actual)
 
-#
-# def read_all_json_files(JSON_ROOT):
-#     for root, _, files in os.walk(JSON_ROOT):
-#         results = []
-#         for f in files:
-#             if f.endswith('.json'):
-#             json_content = read.json(os.path.join(JSON_ROOT, f))
-#                 #                 result.append(all_results)
-#         for x in json_content["results"]:
-#             x['source'] = f
-#             result.append(x)
-#                 df_json = pd.dataframe(result)
-#                 return df_json
